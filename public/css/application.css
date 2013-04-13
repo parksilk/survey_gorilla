@@ -7,3 +7,15 @@
 th {
   text-align: left;
 }
+form{
+  width: 200px;
+}
+.question_answer{
+  margin: 20px 0 0 10px;
+}
+
+#button_form {
+  margin:10px 0 0 10px ;
+}
+
+
