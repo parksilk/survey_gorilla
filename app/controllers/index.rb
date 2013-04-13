@@ -24,7 +24,7 @@ post '/create_form' do
 
     @survey.questions << question 
   end
-  redirect to("/")
+  redirect "/survey/#{@survey.id}"
 end
 
 

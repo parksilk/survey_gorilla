@@ -1,4 +1,4 @@
 <h1>Welcome to Sinatra!</h1>
 <% if logged_in? %>
-  <p>Hello, <%= @user.email %>!</p>
+  <p>Hello, <%= current_user.email %>!</p>
 <% end %>
