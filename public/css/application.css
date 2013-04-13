@@ -18,4 +18,16 @@ form{
   margin:10px 0 0 10px ;
 }
 
+li {
+  margin:0;
+}
 
+.add_choice {
+  margin-top: 0px;
+ 
+
+}
+
+#button_form {
+  margin:50px 10px 0 50px;
+}
