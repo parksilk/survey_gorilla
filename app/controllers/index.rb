@@ -40,7 +40,7 @@ post '/survey/:id' do
     params["choice"].each do |key,value|
       current_user.choices << current_survey.questions.find(key).choices.find(value)
     end
-
+  
 redirect '/'
 end
 

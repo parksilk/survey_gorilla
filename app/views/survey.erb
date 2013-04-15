@@ -1,7 +1,7 @@
 <h1>Survey</h1>
 <% if !current_user.taken_surveys.map {|survey| survey.id}.include?(@survey.id) %>
   <img src=<%= @survey.image %>>
-  <form method="post" action='/survey'>
+  <form method="post" action="/survey/<%= @survey.id %>">
   <ol>
     <% @survey.questions.each do |question| %>
     <li><%=question.text%></li>
