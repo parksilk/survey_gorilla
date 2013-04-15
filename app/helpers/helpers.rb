@@ -20,4 +20,10 @@ helpers do
    @all_surveys = Survey.all 
   end
 
+  def thumbify(survey)
+    image = MiniMagick::Image.open(survey.image.current_path)
+    image.resize "100x100"
+    survey.thumbnail = image
+  end
+
 end

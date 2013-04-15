@@ -3,15 +3,15 @@ get '/' do
   erb :index
 end
 
-post '/' do
-end
-
 get '/create_form' do
   erb :create_form
 end
 
 post '/create_form' do
-  @survey = Survey.create(name: params[:survey_name])
+  @survey = Survey.new(name: params[:survey_name])
+  @survey.image = params[:photofile]
+  thumbify(@survey)
+  @survey.save
   current_user.created_surveys << @survey
   questions = params[:questions]
   questions.each do |ques|
@@ -40,6 +40,7 @@ post '/survey/:id' do
     params["choice"].each do |key,value|
       current_user.choices << current_survey.questions.find(key).choices.find(value)
     end
+
 redirect '/'
 end
 

@@ -4,7 +4,7 @@
   <h3>Would you like to take a survey?</h3>
   <ul>
   <% all_surveys.first(10).each do |survey| %>
-    <li><a href="/survey/<%= survey.id %>"><%= survey.name %></a></li>
+    <li><img src=<%= survey.thumbnail %>><a href="/survey/<%= survey.id %>"><%= survey.name %></a></li>
     <% end %>
   <% else %>
   <p>Please signup up or login to start taking and creating custom surveys.</p>

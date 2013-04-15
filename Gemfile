@@ -12,6 +12,9 @@ gem 'thin'
 
 gem 'activesupport'
 gem 'activerecord'
+gem 'carrierwave'
+gem "mini_magick"
+
 
 gem 'rake'
 gem 'bcrypt-ruby'
