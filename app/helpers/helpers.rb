@@ -22,7 +22,7 @@ helpers do
 
   def thumbify(survey)
     image = MiniMagick::Image.open(survey.image.current_path)
-    image.resize "100x100"
+    image.resize "30x30"
     survey.thumbnail = image
   end
 
