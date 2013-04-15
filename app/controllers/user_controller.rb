@@ -7,7 +7,7 @@ post '/signup' do
   if @user.valid?
     @user.save
     login(@user)
-    erb :index
+    redirect '/'
   else
     erb :signup
   end
@@ -31,5 +31,5 @@ end
 
 get '/logout' do
   session.clear
-  erb :index
+  redirect '/'
 end

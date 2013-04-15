@@ -1,7 +1,5 @@
-require 'bcrypt'
-
 class User < ActiveRecord::Base
-   include BCrypt
+  include BCrypt
   has_secure_password
   
   has_many :created_surveys, :class_name => Survey
@@ -10,5 +8,4 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :choices
 
   validates_confirmation_of :password
-
 end

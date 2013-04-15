@@ -3,7 +3,6 @@
 <form method="post">
 <ol>
   <% @survey.questions.each do |question| %>
-  
   <li><%=question.text%></li>
     <ul>
       <% question.choices.each do |choice| %>

@@ -21,7 +21,7 @@
   <div class="container">
     <div class='button_bar'>
       <a class='btn' href='/'>Home</a>
-      <% if session[:current_user_id] %>
+      <% if logged_in? %>
         <a class='btn' href='/logout'>Logout</a>
         <a class='btn' href='/create_form'>Create New Survey</a>
       <% else %>

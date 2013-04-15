@@ -1,15 +1,12 @@
-<h1>Welcome to Sinatra!</h1>
+<h1>Welcome to Survey Chimp!</h1>
 <% if logged_in? %>
-  <p>Hello, <%= current_user.email %>!</p>
-
+  <p>Hello, <%= current_user.name %>!</p>
   <h3>Would you like to take a survey?</h3>
-
   <ul>
   <% all_surveys.first(10).each do |survey| %>
     <li><a href="/survey/<%= survey.id %>"><%= survey.name %></a></li>
-  <% end %>
+    <% end %>
+  <% else %>
+  <p>Please signup up or login to start taking and creating custom surveys.</p>
   </ul>
-
-
-
 <% end %>
