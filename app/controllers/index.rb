@@ -28,11 +28,6 @@ post '/create_form' do
 end
 
 
-
-def current_user
-  User.first
-end
-
 get '/survey/:id' do 
   @survey = Survey.find(params[:id])
   erb :survey

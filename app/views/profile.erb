@@ -1,0 +1,15 @@
+<h1><%= current_user.name %>'s Profile</h1>
+
+<h3>Survey's you've created:</h3>
+<ul>
+<% current_user.created_surveys.each do |survey| %>
+  <li><a href="/survey/<%= survey.id %>"><%= survey.name %></a></li>
+  <% end %>
+</ul>
+
+<h3>Survey's you've taken:</h3>
+<ul>
+<% current_user.taken_surveys.each do |survey| %>
+  <li><a href="/survey/<%= survey.id %>"><%= survey.name %></a></li>
+  <% end %>
+</ul>

@@ -1,17 +1,22 @@
 
 <h1>Create your new survey:</h1>
 <form id="myForm" action='/create_form' method='post'>
-  <input type="text" placeholder="surveyname" name="survey_name">
-  <ol class="question_set">
-    <button class="add_question">Add Question</button>
-    <li><input type= "text" placeholder="question" name="questions[][question]"></li>
-    <li>
-      <ul class="answer_set">
-        <button class="add_choice">Add Choice</button>
-        <li><input type="text" placeholder="Enter" name="questions[]answer[]"></li>
-      </ul>
-    </li>
-  </ol>
+
+  <input type="text" placeholder="Survey Name" name="survey_name">
+
+  <button class="add_question">Add Question</button>
+  <div id='1' class="question_set">
+    <p>1.</p>
+    <div class='question_row'>
+      <input type= "text" placeholder="Question" name="questions[][question]">
+    </div>
+    
+    <button class="add_choice">Add Choice</button>
+    <div class="choice_field">
+        <input type="text" placeholder="Choice" name="questions[]answer[]">
+    </div>
+  </div>
+
 
   <button id="button_form" type="submit">Submit</button>
 </form>

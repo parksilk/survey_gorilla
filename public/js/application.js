@@ -1,15 +1,16 @@
 $(document).ready(function() {
 
-  $('#myForm').on("click",'.add_question',function(e) {
+  $('#myForm').on("click",'.add_question', function(e) {
     e.preventDefault();
-    var question_set = $('<ol class="question_set"> <button class="add_question">Add Question</button> <li><input type= "text" placeholder="question" name="questions[][question]"></li> <li> <ul class="answer_set"> <button class="add_choice">Add Choice</button> <li><input type="text" placeholder="Enter" name="questions[]answer[]"></li> </ul> </li> </ol>')
-    $(this).closest(".question_set").after(question_set);
+    var incrementDiv = parseInt($('.question_set').last()[0].id) + 1;
+    var question_set = $('<div id=' + incrementDiv + ' class="question_set"><p>' + incrementDiv + '.</p><div class="question_row"><input type= "text" placeholder="Question" name="questions[][question]"></div><button class="add_choice">Add Choice</button><div class="choice_field"><input type="text" placeholder="Choice" name="questions[]answer[]"></div></div>');
+    $(this).nextAll('.question_set').last().after(question_set);
   });
 
-  $('#myForm').on("click",'.add_choice',function(e) {
+  $('#myForm').on("click",'.add_choice', function(e) {
     e.preventDefault();
-    var choice = $('<li><input type="text" placeholder="Enter" name="questions[]answer[]"></li>');
-    $(this).closest(".answer_set").append(choice);
+    var choice = $('<div class="choice_field"><input type="text" placeholder="Choice" name="questions[]answer[]"></div>');
+    $(this).nextAll('.choice_field').last().after(choice);
   });
 
 });

@@ -33,3 +33,7 @@ get '/logout' do
   session.clear
   redirect '/'
 end
+
+get '/profile' do
+  erb :profile
+end
