@@ -70,3 +70,6 @@ li {
   width: 150%;
 }
 
+.survey_questions {
+  list-style-type: none;
+}

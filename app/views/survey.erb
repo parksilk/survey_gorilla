@@ -5,7 +5,7 @@
   <ol>
     <% @survey.questions.each do |question| %>
     <li><%=question.text%></li>
-      <ul>
+      <ul class='survey_questions'>
         <% question.choices.each do |choice| %>
           <li><input type="radio" name="choice[<%=question.id%>]" value="<%=choice.id %>"><%= choice.text %></li>
         <% end %>
